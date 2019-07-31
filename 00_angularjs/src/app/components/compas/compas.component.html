@@ -1,0 +1,196 @@
+<style>
+    h1>span {
+        font: 16px Monaco, MonoSpace;
+        height: 200px;
+        position: absolute;
+        width: 20px;
+        left: 600px;
+        top: 50px;
+        transform-origin: bottom center;
+    }
+
+    #square {
+        width: 100px;
+        height: 100px;
+        left: 560px;
+        top: 170px;
+        background: red;
+        z-index: -2;
+        position: relative;
+    }
+
+    #pentagon {
+        position: relative;
+        width: 54px;
+        box-sizing: content-box;
+        border-width: 70px 18px 0;
+        border-style: solid;
+        border-color: black transparent;
+        top: 225px;
+        left: 563px;
+    }
+
+    #pentagon:before {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -110px;
+        left: -18px;
+        border-width: 0 45px 35px;
+        border-style: solid;
+        border-color: transparent transparent black;
+    }
+
+    /* Extra small devices (portrait phones, less than 576px)  */
+    @media (max-width: 575.98px) {
+        .compas {
+            position: relative;
+            right: 26%;
+            top: -25px;
+            margin-bottom: -60px;
+        }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .compas {
+            position: relative;
+            right: 34%;
+            top: -25px;
+            margin-bottom: -60px;
+        }
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .compas {
+            position: relative;
+            right: 65%;
+            top: -25px;
+            margin-bottom: -60px;
+        }
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .compas {
+            position: relative;
+            right: 67%;
+            top: -25px;
+            margin-bottom: -60px;
+        }
+    }
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        .compas {
+            position: relative;
+            right: 45%;
+            top: -25px;
+            margin-bottom: -60px;
+        }
+    }
+
+    .arrow-up.icon {
+        color: #000;
+        position: absolute;
+        margin-left: 610px;
+        margin-top: 3px;
+        width: 1px;
+        height: 16px;
+        background-color: currentColor;
+        top: 105px;
+    }
+
+    .arrow-up.icon:before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+        border-top: solid 1px currentColor;
+        border-right: solid 1px currentColor;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .vent {
+        color: red;
+        position: absolute;
+        margin-left: 12px;
+        margin-top: 70px;
+        width: 8px;
+        height: 35px;
+        background-color: currentColor;
+    }
+
+    .vent:before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        top: 9px;
+        width: 24px;
+        height: 24px;
+        border-top: solid 7px currentColor;
+        border-right: solid 7px currentColor;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    #texto {
+        color: red;
+    }
+
+    .transparent-circle {
+        position: relative;
+        background-color: rgba(204, 0, 102, 0);
+        border: 2px dashed #000;
+        height: 450px;
+        width: 450px;
+        border-radius: 250px;
+        left: 386px;
+        top: -50px;
+    }
+
+    .direction {
+        position: relative;
+        top: 31px;
+        right: 30px;
+    }
+
+    .grade {
+        z-index: -1;
+    }
+
+    .grade-vent {
+        z-index: -2;
+    }
+</style>
+<div class="compas">
+    <h1 class="grades">
+        <span class="1">1</span>
+        <span class="2">2</span>
+        <span class="3">3</span>
+        <span class="4">4</span>
+        <span class="5">5</span>
+        <span class="6">6</span>
+        <span class="7">7</span>
+        <span class="8">8</span>
+    </h1>
+    <h1 class="grades_vent">
+        <span class="1"></span>
+        <span class="2"></span>
+        <span class="3"></span>
+        <span class="4"></span>
+        <span class="5"></span>
+        <span class="6"></span>
+        <span class="7"></span>
+        <span class="8"></span>
+    </h1>
+    <div id="pentagon"></div>
+    <div id="flecha" class="arrow-up icon"><span class="direction">Direction</span></div>
+    <p class="transparent-circle"></p>
+
+</div>

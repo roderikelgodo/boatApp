@@ -1,0 +1,37 @@
+<div class="row all-tableros">
+    <div class="col-xs-12 col-sm-8 title">
+        <span>Données de navigation</span>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-xs-12 col-md-8  tablero">
+        <h2>Vitesse</h2>
+        <p>{{ bateau.vitesseNoeud }} N</p>
+        <app-gauge [childMessage]="bateau.vitesseKm"></app-gauge>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-xs-6 col-md-4 tablero">
+        <h2>Route (COG)</h2>
+        <p>{{ bateau.cap }} °</p>
+    </div>
+    <div class="col-xs-12 col-md-4 tablero">
+        <h2>Compas</h2>
+        <p>{{ bateau.compas }} N</p>
+    </div>
+    <div class="col-xs-12 col-md-8 tablero">
+        <h2>Position</h2>
+        <p>{{ bateau.position1 }}</p>
+        <p>{{ bateau.position2 }}</p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-xs-12 col-md-8 tablero">
+        <h2>Direction (CAP) et Angle du vent</h2>
+        <app-compas [data]='[bateau,vent]'></app-compas>
+        <p id="vitesseVent">Vitesse actuelle du vent: {{ vent.vitesse }} km/h</p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-xs-12 col-md-8 tablero">
+        <h2>Historique</h2>
+        <app-historique [bateau]='bateau'></app-historique>
+    </div>
+    <div class="w-100"></div>
+</div>

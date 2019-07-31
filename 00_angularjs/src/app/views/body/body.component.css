@@ -1,0 +1,17 @@
+.tablero {
+  border: 1px dashed black;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.all-tableros {
+  margin-left: 15px;
+  margin-right: 15px;
+}
