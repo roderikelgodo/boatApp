@@ -4,6 +4,8 @@ A protoype application that measures boats navigation data: wind angle and
 position, and boat direction, position and speed.
 Made in Node, MongoDB, AngularJs and ReactJs.
 
+[Live demo](https://bateau-b594b.web.app/).
+
 ## Installation
 
 Run local server:
