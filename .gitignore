@@ -1,4 +1,3 @@
-node_modules/
-00_angularjs/node_modules/
-01_reactjs/node_modules/
-01_reactjs/yarn.lock
+angularjs/node_modules/
+reactjs/node_modules/
+reactjs/yarn.lock

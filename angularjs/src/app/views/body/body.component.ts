@@ -34,30 +34,22 @@ export class BodyComponent implements OnInit {
 
 
   getData() {
+    this.ventService.getVent()
+      .subscribe((resp: any) => {
 
-    const config = require('../../../../../config/config.json');
+        if (resp.ok) {
+          this.vent = resp.vent;
 
-    if (config.database) {
-      this.ventService.getVent()
-        .subscribe((resp: any) => {
+        }
+      });
+    this.bateauService.getBateau()
+      .subscribe((resp: any) => {
 
-          if (resp.ok) {
-            this.vent = resp.vent;
+        if (resp.ok) {
+          this.bateau = resp.bateau;
 
-          }
-        });
-      this.bateauService.getBateau()
-        .subscribe((resp: any) => {
-
-          if (resp.ok) {
-            this.bateau = resp.bateau;
-
-          }
-        });
-    } else {
-      this.vent = this.ventService.getVentJson();
-      this.bateau = this.bateauService.getBateauJson();
-    }
+        }
+      });
 
   }
 }
