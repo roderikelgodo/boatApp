@@ -1,4 +1,4 @@
-export class Bateau {
+export class Boat {
 
     constructor(
         public position1?: string,

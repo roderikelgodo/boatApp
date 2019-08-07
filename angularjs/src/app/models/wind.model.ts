@@ -1,4 +1,4 @@
-export class Vent {
+export class Wind {
 
     constructor(
         public angle?: string,

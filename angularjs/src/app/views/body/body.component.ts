@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { VentService } from '../../services/service.index';
-import { BateauService } from '../../services/service.index';
-import { Vent } from '../../models/vent.model';
-import { Bateau } from '../../models/bateau.model';
+import { WindService } from '../../services/service.index';
+import { BoatService } from '../../services/service.index';
+import { Wind } from '../../models/wind.model';
+import { Boat } from '../../models/boat.model';
 import { interval } from 'rxjs';
 
 
@@ -11,16 +11,19 @@ import { interval } from 'rxjs';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css'],
 })
+/**
+ * html 'body' content
+ */
 export class BodyComponent implements OnInit {
 
-  vent: Vent = new Vent();
-  bateau: Bateau = new Bateau();
+  wind: Wind = new Wind();
+  boat: Boat = new Boat();
   secondsCounter = interval(10000);
 
 
   constructor(
-    public ventService: VentService,
-    public bateauService: BateauService
+    public windService: WindService,
+    public boatService: BoatService
   ) { }
 
 
@@ -34,21 +37,21 @@ export class BodyComponent implements OnInit {
 
 
   getData() {
-    this.ventService.getVent()
+    /**
+     * Call mock wind data from windService
+     */
+    this.windService.getWindData()
       .subscribe((resp: any) => {
+        this.wind = resp;
+        console.log(this.wind);
 
-        if (resp.ok) {
-          this.vent = resp.vent;
-
-        }
       });
-    this.bateauService.getBateau()
+    /**
+     * Call mock boat data from boatService
+     */
+    this.boatService.getBoatData()
       .subscribe((resp: any) => {
-
-        if (resp.ok) {
-          this.bateau = resp.bateau;
-
-        }
+        this.boat = resp;
       });
 
   }

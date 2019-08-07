@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VentService } from "./services/service.index";
 
 @Component({
   selector: 'app-root',

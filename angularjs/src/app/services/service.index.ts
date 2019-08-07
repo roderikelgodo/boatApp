@@ -1,2 +1,2 @@
-export { VentService } from './vent.service';
-export { BateauService } from './bateau.service';
+export { WindService } from './wind.service';
+export { BoatService } from './boat.service';

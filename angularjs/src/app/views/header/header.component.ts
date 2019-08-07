@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
     selector: 'app-header',
     templateUrl: './header.component.html'
 })
+
+/**
+ * html 'header' content
+ */
 export class HeaderComponent {
 
 }
