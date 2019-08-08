@@ -15,15 +15,14 @@ export class WindService {
 
 
   /**
-   * Get a mock wind data from https://my.api.mockaroo.com
+   * Get a mock wind data from Firebase
    */
   getWindData() {
 
     const url = URL_WIND;
     const httpOptions = {
       headers: new HttpHeaders({
-        'X-API-Key': '331c4280',
-        'Access-Control-Allow-Origin': 'https://mockaroo.com'
+        'Access-Control-Allow-Origin': '*'
       })
     };
 

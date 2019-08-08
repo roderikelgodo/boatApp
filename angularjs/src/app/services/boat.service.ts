@@ -15,15 +15,14 @@ export class BoatService {
 
 
   /**
-   * Get a mock boat data from https://my.api.mockaroo.com
+   * Get a mock boat data from Firebase
    */
   getBoatData() {
 
     const url = URL_BOAT;
     const httpOptions = {
       headers: new HttpHeaders({
-        'X-API-Key': '331c4280',
-        'Access-Control-Allow-Origin': 'https://mockaroo.com'
+        'Access-Control-Allow-Origin': '*'
       })
     };
 

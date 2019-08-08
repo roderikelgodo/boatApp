@@ -21,7 +21,7 @@ export class HistoriqueComponent implements OnInit {
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnChanges() {
 
-    let noeud = parseInt(this.bateau.vitesseNoeud);
+    let noeud = parseInt(this.boat.vitesseNoeud);
     const length = this.points.length;
 
     if (noeud) {

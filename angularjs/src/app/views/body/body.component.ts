@@ -38,21 +38,23 @@ export class BodyComponent implements OnInit {
 
   getData() {
     /**
-     * Call mock wind data from windService
-     */
-    this.windService.getWindData()
-      .subscribe((resp: any) => {
-        this.wind = resp;
-        console.log(this.wind);
-
-      });
-    /**
      * Call mock boat data from boatService
      */
     this.boatService.getBoatData()
       .subscribe((resp: any) => {
-        this.boat = resp;
+        if (resp.ok) {
+          this.boat = resp.boat;
+        }
       });
+    /**
+     * Call mock wind data from windService
+     */
+    this.windService.getWindData()
+      .subscribe((resp: any) => {
+        if (resp.ok) {
+          this.wind = resp.wind;
+        }
 
+      });
   }
 }
