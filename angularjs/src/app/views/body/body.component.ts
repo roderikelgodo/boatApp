@@ -16,8 +16,10 @@ import { interval } from 'rxjs';
  */
 export class BodyComponent implements OnInit {
 
-  wind: Wind = new Wind();
+  // set boat and wind variable
   boat: Boat = new Boat();
+  wind: Wind = new Wind();
+  // set the counter value to 10 seconds
   secondsCounter = interval(10000);
 
 
@@ -28,10 +30,12 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit() {
+    // Call of function that fetch the needed boat and wind data
     this.getData();
-    this.secondsCounter.subscribe(n => {
-      this.getData();
-    });
+    // set the counter to call the getData() function every 10 seconds
+    // this.secondsCounter.subscribe(n => {
+    //   this.getData();
+    // });
   }
 
 

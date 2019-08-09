@@ -1,5 +1,5 @@
 <div class="row all-tableros">
-    <div class="col-xs-12 col-sm-8 title">
+    <div class="col-xs-12 col-md-8 title">
         <span>Données de navigation</span>
     </div>
     <div class="w-100"></div>
@@ -9,11 +9,11 @@
         <app-gauge [childMessage]="boat.vitesseKm"></app-gauge>
     </div>
     <div class="w-100"></div>
-    <div class="col-xs-6 col-md-4 tablero">
+    <div class="col-xs-6 col-md-4 tablero" style="margin-right: 0">
         <h2>Route (COG)</h2>
         <p>{{ boat.cap }} °</p>
     </div>
-    <div class="col-xs-12 col-md-4 tablero">
+    <div class="col-xs-12 col-md-4 tablero" style="margin-left: 0">
         <h2>Compas</h2>
         <p>{{ boat.compas }} N</p>
     </div>
@@ -24,14 +24,14 @@
     </div>
     <div class="w-100"></div>
     <div class="col-xs-12 col-md-8 tablero">
-        <h2>Direction (CAP) et Angle du wind</h2>
-        <app-compas [data]='[boat,wind]'></app-compas>
+        <h2 style="margin-bottom: 30px">Direction (CAP) et Angle du wind</h2>
+        <!-- <app-compas [data]='[boat,wind]'></app-compas> -->
         <p id="vitessewind">Vitesse actuelle du wind: {{ wind.vitesse }} km/h</p>
     </div>
     <div class="w-100"></div>
     <div class="col-xs-12 col-md-8 tablero">
         <h2>Historique</h2>
-        <app-historique [boat]='boat'></app-historique>
+        <!-- <app-historique [boat]='boat'></app-historique> -->
     </div>
     <div class="w-100"></div>
 </div>
