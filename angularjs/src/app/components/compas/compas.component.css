@@ -1,0 +1,237 @@
+h1>span {
+  font: 16px Monaco, MonoSpace;
+  height: 200px;
+  position: absolute;
+  width: 20px;
+  left: 600px;
+  top: 50px;
+  transform-origin: bottom center;
+}
+
+#square {
+  width: 100px;
+  height: 100px;
+  left: 560px;
+  top: 170px;
+  background: red;
+  z-index: -2;
+  position: relative;
+}
+
+#pentagon {
+  position: relative;
+  width: 54px;
+  box-sizing: content-box;
+  border-width: 70px 18px 0;
+  border-style: solid;
+  border-color: black transparent;
+  top: 225px;
+  left: 563px;
+}
+
+#pentagon:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -110px;
+  left: -18px;
+  border-width: 0 45px 35px;
+  border-style: solid;
+  border-color: transparent transparent black;
+}
+
+.compas {
+  position: relative;
+  margin-bottom: -60px;
+}
+
+.arrow-up.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 610px;
+  margin-top: 3px;
+  width: 1px;
+  height: 16px;
+  background-color: currentColor;
+  top: 105px;
+}
+
+.arrow-up.icon:before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 1px;
+  width: 10px;
+  height: 10px;
+  border-top: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.vent {
+  color: red;
+  position: absolute;
+  margin-left: 12px;
+  margin-top: 70px;
+  width: 8px;
+  height: 35px;
+  background-color: currentColor;
+}
+
+.vent:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 9px;
+  width: 24px;
+  height: 24px;
+  border-top: solid 7px currentColor;
+  border-right: solid 7px currentColor;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#texto {
+  color: red;
+}
+
+.transparent-circle {
+  position: relative;
+  background-color: rgba(204, 0, 102, 0);
+  border: 2px dashed #000;
+  height: 450px;
+  width: 450px;
+  border-radius: 250px;
+  left: 386px;
+  top: -50px;
+}
+
+.direction {
+  position: relative;
+  top: 31px;
+  right: 30px;
+}
+
+.grade {
+  z-index: -1;
+}
+
+.grade-vent {
+  z-index: -2;
+}
+
+/* Extra small devices (portrait phones, less than 576px)  */
+@media (max-width: 575.98px) {
+  .compas {
+    right: 87%;
+    top: -25px;
+  }
+
+  .transparent-circle {
+    height: 300px;
+    width: 300px;
+    border-radius: 250px;
+    left: 257px;
+    top: -36px;
+  }
+
+  #pentagon {
+    position: relative;
+    width: 36px;
+    box-sizing: content-box;
+    border-width: 46px 12px 0;
+    top: 148px;
+    left: 376px;
+  }
+
+  #pentagon:before {
+    height: 0;
+    width: 0;
+    top: -73px;
+    left: -12px;
+    border-width: 0 30px 23px;
+    border-style: solid;
+    border-color: transparent transparent black;
+  }
+
+  h1>span {
+    font: 12px Monaco, MonoSpace;
+    width: 13px;
+    left: 400px;
+    top: 33px;
+    transform-origin: bottom center;
+    height: 130px;
+  }
+
+  .arrow-up.icon {
+    margin-left: 406px;
+    margin-top: 2px;
+    width: 1px;
+    height: 14px;
+    top: 70px;
+  }
+
+  .arrow-up.icon:before {
+    left: -5px;
+    top: 1px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .direction {
+    position: relative;
+    top: 20px;
+    right: 30px;
+    font-size: 0.9rem;
+  }
+
+  .vent {
+    margin-left: 4px;
+    margin-top: 47px;
+    width: 3px;
+    height: 23px;
+  }
+
+  .vent:before {
+    left: -6px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-top: solid 3px currentColor;
+    border-right: solid 3px currentColor;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .compas {
+    right: 78%;
+    top: -25px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .compas {
+    right: 92%;
+    top: -25px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .compas {
+    right: 67%;
+    top: -25px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .compas {
+    right: 45%;
+    top: -25px;
+  }
+}
