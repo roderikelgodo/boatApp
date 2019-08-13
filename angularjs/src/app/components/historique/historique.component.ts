@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'app-historique',
   templateUrl: './historique.component.html',
   styleUrls: ['./historique.component.css']
 })
-export class HistoriqueComponent implements OnInit {
+export class HistoriqueComponent implements OnChanges {
 
   points: any = [];
   coorsY = { 0: 350, 5: 300, 10: 250, 15: 200, 20: 150, 25: 100, 30: 50 };   // Noeuds
@@ -15,13 +15,21 @@ export class HistoriqueComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  setViewBox() {
+    const svg = document.getElementsByTagName('svg');
+    if (window.innerWidth <= 575.98) {
+      svg[0].setAttribute('viewBox', '0 0 460 450');
+    } else {
+      svg[0].removeAttribute('viewBox');
+    }
   }
 
-  // tslint:disable-next-line: use-life-cycle-interface
+  onResize($event) {
+    this.setViewBox();
+  }
   ngOnChanges() {
 
-    let noeud = parseInt(this.boat.vitesseNoeud);
+    const noeud = Number(this.boat.vitesseNoeud);
     const length = this.points.length;
 
     if (noeud) {
