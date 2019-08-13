@@ -26,7 +26,7 @@ h1>span {
   border-style: solid;
   border-color: black transparent;
   top: 225px;
-  left: 563px;
+  left: 569px;
 }
 
 #pentagon:before {
@@ -49,7 +49,7 @@ h1>span {
 .arrow-up.icon {
   color: #000;
   position: absolute;
-  margin-left: 610px;
+  margin-left: 616px;
   margin-top: 3px;
   width: 1px;
   height: 16px;
@@ -223,7 +223,7 @@ h1>span {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .compas {
-    right: 67%;
+    right: 63%;
     top: -25px;
   }
 }

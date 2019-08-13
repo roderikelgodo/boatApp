@@ -1,6 +1,4 @@
-import { Component, ViewEncapsulation, Input, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-import * as $ from 'jquery';
+import { Component, ViewEncapsulation, Input, OnChanges, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-compas',
@@ -8,83 +6,77 @@ import * as $ from 'jquery';
   styleUrls: ['./compas.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class CompasComponent implements OnInit {
+export class CompasComponent {
 
-  control = true;
+  /**
+   * Binding Input from 'body component' >> [data]='{boat:boat,wind:wind}'
+   */
+  @Input() data: any;
 
-  @Input() data: any
-  // set data(data: any) {
+  // Array to form the compass bezel (coordenates)
+  anglesCoord = ['N  0°', '45°', 'E 90°', '135°', 'S 180°', '225°', 'O 270°', '315°'];
+  // Array of wind types
+  windTypes = ['Face', 'Près', 'Travers', 'Large', 'Arrière', 'Large', 'Travers', 'Pres'];
+  // Actual wind type
+  windType = '';
+  // Array of custom (fixed) angles to make the graph work
+  angles = [0, 45, 90, 135, 180, 225, 270, 315];
+  // Variable to set the degree the compass must turn
+  degree = 0;
 
-  //   if (data[0].cap !== undefined && data[1].vitesse !== undefined && this.control) {
-  //     from()
-  //     this.donnes(data);
-  //   }
-  // }
   constructor() { }
 
-  ngOnInit() { }
-  ngOnChanges() {
-    this.donnes(this.data);
+  /**
+   * Compass styles (the outsider part that shows degrees and cardinal points)
+   */
+  getStylesCompass() {
+
+    const styles = {
+      WebkitTransform: '',
+      border: '',
+      color: ''
+    };
+
+
+    if (this.degree === 0) {
+      this.degree = this.data.boat.compas;
+    }
+    styles.WebkitTransform = 'rotate(' + this.degree + 'deg)';
+    styles.border = '2x dashed';
+
+    if (this.degree === 360 || this.degree === 0) {
+      styles.color = 'red';
+    }
+
+    this.degree = Number(this.degree) + 45;
+
+    return styles;
+
   }
+  /**
+   * Compass styles (the inner part that shows the red arrow with wind direction)
+   */
+  thisDirection(index) {
 
-  donnes(data) {
-
-    this.control = false;
-    const bateau = data[0];
-    const vent = data[1];
-
-
-    let spans = $('.grades').find('span');
-
-    let angle = parseInt(bateau.compas);
-
-    const anglesCoord = ['N  0°', '45°', 'E 90°', '135°', 'S 180°', '225°', 'O 270°', '315°'];
-    const windTypes = ['Face', 'Près', 'Travers', 'Large', 'Arrière', 'Large', 'Travers', 'Pres'];
-    const angles = [0, 45, 90, 135, 180, 225, 270, 315];
-
-    $(spans).each(function (i: any, span: any) {
-      const grado = (angle === 0 ? (i * 45) : (angle));
-
-      $(span).attr('grado', grado)
-      $(span).css({
-        WebkitTransform: 'rotate(' + grado + 'deg)'
-      });
-
-      $(span).css('border', '2x dashed')
-      $(span).text(anglesCoord[i]);
-      $(span).css({
-        WebkitTransform: 'rotate(' + grado + 'deg)'
-      });
-      if (grado === 360 || grado === 0) {
-        $(span).css('color', 'red');
-      }
-
-      angle += 45;
-    });
-
-    spans = $('.grades_vent').find('span');
-    $('.vent').remove();
-    let reached = false;
-    let windType = '';
-    $(spans).each(function (i: any, span: any) {
-
-      if (vent.angle > angles[i] && vent.angle <= angles[i + 1]) {
-
-        $(span).append('<div class="vent"></div>');
-        $(span).css({
-          WebkitTransform: 'rotate(' + angles[i + 1] + 'deg)'
-        });
-        reached = true;
-        windType = windTypes[i + 1];
-      } else if (typeof angles[i + 1] === 'undefined' && !reached) {
-        // $(spans[0]).append('<div class="vent"></div>');
-        windType = windTypes[0];
-      }
-    });
-    $('.info').remove();
-    $('<div class="info">Angle du vent: <span>' + vent.angle + '°</span>: <span id="texto">' + windType + '</span><div>').insertBefore('#vitesseVent');
+    if (this.data.wind.angle > this.angles[index] && this.data.wind.angle <= this.angles[index + 1]) {
+      return true;
+    }
+    return false;
   }
+  /**
+   * Compass styles (the inner part that shows the red arrow with wind direction)
+   */
+  getStylesWindDirection(index) {
 
+    const styles = {
+      WebkitTransform: ''
+    };
+    if (this.data.wind.angle > this.angles[index] && this.data.wind.angle <= this.angles[index + 1]) {
+      styles.WebkitTransform = 'rotate(' + this.angles[index + 1] + 'deg)';
+      this.windType = this.windTypes[index + 1];
+    }
+    return styles;
 
+  }
 
 }

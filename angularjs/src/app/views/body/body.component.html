@@ -25,7 +25,7 @@
     <div class="w-100"></div>
     <div class="col-xs-12 col-md-8 tablero">
         <h2 style="margin-bottom: 30px">Direction (CAP) et Angle du wind</h2>
-        <app-compas [data]='[boat,wind]'></app-compas>
+        <app-compas [data]='{boat:boat,wind:wind}'></app-compas>
         <p id="vitessewind">Vitesse actuelle du wind: {{ wind.vitesse }} km/h</p>
     </div>
     <div class="w-100"></div>

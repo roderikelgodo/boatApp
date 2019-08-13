@@ -1,26 +1,14 @@
 <div class="compas">
-    <h1 class="grades">
-        <span class="1">1</span>
-        <span class="2">2</span>
-        <span class="3">3</span>
-        <span class="4">4</span>
-        <span class="5">5</span>
-        <span class="6">6</span>
-        <span class="7">7</span>
-        <span class="8">8</span>
+    <h1 class="grades" *ngIf="data.boat.compas">
+        <span *ngFor="let item of anglesCoord; let i = index;" [ngStyle]="getStylesCompass()">{{ item }}</span>
     </h1>
     <h1 class="grades_vent">
-        <span class="1"></span>
-        <span class="2"></span>
-        <span class="3"></span>
-        <span class="4"></span>
-        <span class="5"></span>
-        <span class="6"></span>
-        <span class="7"></span>
-        <span class="8"></span>
+        <span *ngFor="let angle of angles; let i = index;" [ngStyle]="getStylesWindDirection(i)">
+            <div class="vent" *ngIf="thisDirection(i)"></div>
+        </span>
     </h1>
     <div id="pentagon"></div>
     <div id="flecha" class="arrow-up icon"><span class="direction">Direction</span></div>
     <p class="transparent-circle"></p>
-
 </div>
+<div class="info">Angle du vent: <span>{{this.data.wind.angle}} °</span>: <span id="texto">{{windType}}</span></div>
