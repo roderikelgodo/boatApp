@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class Gauge extends Component {
   render() {
-    const { bateau } = this.props;
+    const { boat } = this.props;
     const pStyle = {
-      transform: "rotate(" + bateau.vitesseKm + "deg)"
+      transform: "rotate(" + boat.vitesseKm + "deg)"
     };
 
     return (
@@ -14,7 +14,7 @@ class Gauge extends Component {
 
         <div className="gauge-c" style={pStyle} />
         <div className="gauge-data">
-          <h1 id="percent">{bateau.vitesseKm} km/h</h1>
+          <h1 id="percent">{boat.vitesseKm} km/h</h1>
         </div>
       </div>
     );

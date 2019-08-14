@@ -12,9 +12,10 @@ footer {
 
 /* Estructura Tablero */
 .tablero {
-    /* background-color: rgba(86, 61, 124, .15); */
-    border: 1px dashed black;
-    text-align: center;
+    border: none;
+    background-color: #f6f6f6;
+    padding-top: 40px;
+    margin-bottom: 15px;
 }
 
 .title {
@@ -26,8 +27,7 @@ footer {
 }
 
 .all-tableros {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 auto;
 }
 
 /* Gauge */
@@ -36,17 +36,12 @@ footer {
     overflow: hidden;
     text-align: center;
     transform: translate(-50%);
-    width: 400px;
-    height: 200px;
-    left: 50%;
 }
 
 .gauge-a {
     z-index: 1;
     position: absolute;
     background-color: rgb(183, 178, 178);
-    width: 400px;
-    height: 200px;
     top: 0%;
     border-radius: 250px 250px 0px 0px;
 }
@@ -55,10 +50,6 @@ footer {
     z-index: 3;
     position: absolute;
     background-color: #444;
-    width: 250px;
-    height: 125px;
-    top: 75px;
-    margin-left: 75px;
     margin-right: auto;
     border-radius: 250px 250px 0px 0px;
 }
@@ -67,9 +58,6 @@ footer {
     z-index: 2;
     position: absolute;
     background-color: #e91e64;
-    width: 400px;
-    height: 200px;
-    top: 200px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0px 0px 200px 200px;
@@ -87,18 +75,184 @@ footer {
     font-size: 1.5em;
     line-height: 25px;
     position: absolute;
-    width: 400px;
-    height: 200px;
-    top: 120px;
     margin-left: auto;
     margin-right: auto;
     transition: all 1s ease-out;
 }
 
+/* Extra small devices (portrait phones, less than 576px)  */
+@media (max-width: 575.98px) {
+    .contenedor {
+        height: 140px;
+        left: 54%;
+    }
+
+    .gauge-a {
+        width: 280px;
+        height: 140px;
+        top: 0%;
+    }
+
+    .gauge-b {
+        width: 175px;
+        height: 87.5px;
+        top: 38%;
+        margin-left: 15.5%;
+    }
+
+    .gauge-c {
+        width: 280px;
+        height: 140px;
+        top: 140px;
+    }
+
+    .gauge-data {
+        width: 40%;
+        top: 59%;
+        left: 22%;
+    }
+
+    .gauge-data h1 {
+        font-size: 1.5em !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .contenedor {
+        height: 200px;
+        left: 60%;
+    }
+
+    .gauge-a {
+        width: 400px;
+        height: 200px;
+        top: 0%;
+    }
+
+    .gauge-b {
+        width: 250px;
+        height: 125px;
+        top: 38%;
+        margin-left: 14%;
+    }
+
+    .gauge-c {
+        width: 400px;
+        height: 200px;
+        top: 200px;
+    }
+
+    .gauge-data {
+        width: 40%;
+        top: 64%;
+        left: 22%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .contenedor {
+        height: 200px;
+        left: 60%;
+    }
+
+    .gauge-a {
+        width: 400px;
+        height: 200px;
+        top: 0%;
+    }
+
+    .gauge-b {
+        width: 250px;
+        height: 125px;
+        top: 38%;
+        margin-left: 16%;
+    }
+
+    .gauge-c {
+        width: 400px;
+        height: 200px;
+        top: 200px;
+    }
+
+    .gauge-data {
+        width: 40%;
+        top: 64%;
+        left: 21%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .contenedor {
+        height: 200px;
+        left: 63%;
+    }
+
+    .gauge-a {
+        width: 400px;
+        height: 200px;
+        top: 0%;
+    }
+
+    .gauge-b {
+        width: 250px;
+        height: 125px;
+        top: 38%;
+        margin-left: 13%;
+    }
+
+    .gauge-c {
+        width: 400px;
+        height: 200px;
+        top: 200px;
+    }
+
+    .gauge-data {
+        width: 40%;
+        top: 64%;
+        left: 15%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .contenedor {
+        height: 200px;
+        left: 68%;
+    }
+
+    .gauge-a {
+        width: 400px;
+        height: 200px;
+        top: 0%;
+    }
+
+    .gauge-b {
+        width: 250px;
+        height: 125px;
+        top: 38%;
+        margin-left: 11%;
+    }
+
+    .gauge-c {
+        width: 400px;
+        height: 200px;
+        top: 200px;
+    }
+
+    .gauge-data {
+        width: 40%;
+        top: 64%;
+        left: 9%;
+    }
+}
+
 /* END Gauge */
 
 /* Compas */
-h1>span {
+h1 > span {
     font: 16px Monaco, MonoSpace;
     height: 200px;
     position: absolute;
@@ -126,7 +280,7 @@ h1>span {
     border-style: solid;
     border-color: black transparent;
     top: 225px;
-    left: 563px;
+    left: 569px;
 }
 
 #pentagon:before {
@@ -141,60 +295,15 @@ h1>span {
     border-color: transparent transparent black;
 }
 
-/* Extra small devices (portrait phones, less than 576px)  */
-@media (max-width: 575.98px) {
-    .compas {
-        position: relative;
-        right: 26%;
-        top: -25px;
-        margin-bottom: -60px;
-    }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .compas {
-        position: relative;
-        right: 63%;
-        top: -25px;
-        margin-bottom: -60px;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .compas {
-        position: relative;
-        right: 81%;
-        top: -25px;
-        margin-bottom: -60px;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .compas {
-        position: relative;
-        right: 67%;
-        top: -25px;
-        margin-bottom: -60px;
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .compas {
-        position: relative;
-        right: 39%;
-        top: -25px;
-        margin-bottom: -60px;
-    }
+.compas {
+    position: relative;
+    margin-bottom: -60px;
 }
 
 .arrow-up.icon {
     color: #000;
     position: absolute;
-    margin-left: 610px;
+    margin-left: 616px;
     margin-top: 3px;
     width: 1px;
     height: 16px;
@@ -267,6 +376,120 @@ h1>span {
     z-index: -2;
 }
 
+/* Extra small devices (portrait phones, less than 576px)  */
+@media (max-width: 575.98px) {
+    .compas {
+        right: 75%;
+        top: -14px;
+    }
+
+    .transparent-circle {
+        height: 300px;
+        width: 300px;
+        border-radius: 250px;
+        left: 257px;
+        top: -36px;
+    }
+
+    #pentagon {
+        position: relative;
+        width: 36px;
+        box-sizing: content-box;
+        border-width: 46px 12px 0;
+        top: 148px;
+        left: 376px;
+    }
+
+    #pentagon:before {
+        height: 0;
+        width: 0;
+        top: -73px;
+        left: -12px;
+        border-width: 0 30px 23px;
+        border-style: solid;
+        border-color: transparent transparent black;
+    }
+
+    h1 > span {
+        font: 12px Monaco, MonoSpace;
+        width: 13px;
+        left: 400px;
+        top: 33px;
+        transform-origin: bottom center;
+        height: 130px;
+    }
+
+    .arrow-up.icon {
+        margin-left: 406px;
+        margin-top: 2px;
+        width: 1px;
+        height: 14px;
+        top: 70px;
+    }
+
+    .arrow-up.icon:before {
+        left: -5px;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .direction {
+        position: relative;
+        top: 20px;
+        right: 30px;
+        font-size: 0.9rem;
+    }
+
+    .vent {
+        margin-left: 4px;
+        margin-top: 47px;
+        width: 3px;
+        height: 23px;
+    }
+
+    .vent:before {
+        left: -6px;
+        top: 6px;
+        width: 16px;
+        height: 16px;
+        border-top: solid 3px currentColor;
+        border-right: solid 3px currentColor;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .compas {
+        right: 67%;
+        top: -6px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .compas {
+        right: 80%;
+        top: -25px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .compas {
+        right: 57%;
+        top: -25px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .compas {
+        right: 40%;
+        top: -15px;
+    }
+}
+
 /* END Compas */
 
 /* Historique */
@@ -282,9 +505,10 @@ h1>span {
 @media (max-width: 575.98px) {
     .graph {
         position: relative;
-        height: 500px;
-        width: 800px;
-        left: 12%;
+        height: 325px;
+        width: 300px;
+        left: -3%;
+        margin-bottom: 10%;
     }
 }
 
@@ -293,8 +517,7 @@ h1>span {
     .graph {
         position: relative;
         height: 500px;
-        width: 800px;
-        left: -1%;
+        width: 500px;
     }
 }
 
@@ -304,7 +527,7 @@ h1>span {
         position: relative;
         height: 500px;
         width: 800px;
-        left: -3%;
+        left: -2%;
     }
 }
 
@@ -324,7 +547,7 @@ h1>span {
         position: relative;
         height: 500px;
         width: 800px;
-        left: 6%;
+        left: 10%;
     }
 }
 

@@ -15,11 +15,11 @@ class Historique extends Component {
   constructor(props) {
 
     super(props);
-    this.state = { _id: '' };
+
   }
 
-  loadData(bateau) {
-    let noeud = parseInt(bateau.vitesseNoeud);
+  loadData(boat) {
+    let noeud = parseInt(boat.vitesseNoeud);
 
     const length = this.points.length;
 
@@ -39,23 +39,46 @@ class Historique extends Component {
     }
   }
 
-  render() {
-    const { bateau } = this.props;
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.boat !== nextProps.boat) {
+      return true;
+    }
+    return false;
+  }
 
-    if (!bateau || !this.time) {
-      this.time = true
+  // componentWillMount() {
+  //   this.setViewBox();
+  // }
+  componentDidMount() {
+    window.addEventListener("resize", this.setViewBox());
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.setViewBox());
+  }
+
+  /**
+   * Sets viewBox attribute for mobile
+   */
+  setViewBox() {
+    const svg = document.getElementsByTagName('svg');
+
+    if (window.innerWidth <= 575.98) {
+      svg[0].setAttribute('viewBox', '0 0 460 450');
     } else {
-      this.time = false
+      svg[0].removeAttribute('viewBox');
     }
-    if (bateau) {
-      this.loadData(bateau)
-    }
+  }
 
-    this.circles = this.points.map((point, i) =>
-      <Circle key={(Date.now() + i).toString()} cx={point[1]} cy={point[0]}
-        cxx={this.points[i + 1] ? this.points[i + 1][1] : point[1]}
-        cyy={this.points[i + 1] ? this.points[i + 1][0] : point[0]}></Circle>
-    )
+  render() {
+    const { boat } = this.props;
+
+    this.loadData(boat)
+
+    // this.circles = this.points.map((point, i) =>
+    //   <Circle key={boat._id} cx={point[1]} cy={point[0]}
+    //     cxx={this.points[i + 1] ? this.points[i + 1][1] : point[1]}
+    //     cyy={this.points[i + 1] ? this.points[i + 1][0] : point[0]}></Circle>
+    // )
 
     return (
 

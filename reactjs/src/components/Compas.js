@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import $ from "jquery";
 
 class Compas extends Component {
-  donnes(vent, bateau) {
+  donnes(wind, boat) {
     this.control = false;
 
     let spans = $(".grades").find("span");
 
-    let angle = parseInt(bateau.compas);
+    let angle = parseInt(boat.compas);
 
     const anglesCoord = [
       "N  0°",
@@ -51,13 +51,13 @@ class Compas extends Component {
       angle += 45;
     });
 
-    spans = $(".grades_vent").find("span");
-    $(".vent").remove();
+    spans = $(".grades_wind").find("span");
+    $(".wind").remove();
     let reached = false;
     let windType = "";
     $(spans).each(function (i, span) {
-      if (vent.angle > angles[i] && vent.angle <= angles[i + 1]) {
-        $(span).append('<div class="vent"></div>');
+      if (wind.angle > angles[i] && wind.angle <= angles[i + 1]) {
+        $(span).append('<div class="wind"></div>');
         $(span).css({
           WebkitTransform: "rotate(" + angles[i + 1] + "deg)"
         });
@@ -69,16 +69,16 @@ class Compas extends Component {
     });
     $(".info").remove();
     $(
-      '<div class="info">Angle du vent: <span>' +
-      vent.angle +
+      '<div class="info">Angle du wind: <span>' +
+      wind.angle +
       '°</span>: <span id="texto">' +
       windType +
       "</span><div>"
-    ).insertBefore("#vitesseVent");
+    ).insertBefore("#vitessewind");
   }
   render() {
-    const { vent, bateau } = this.props;
-    this.donnes(vent, bateau);
+    const { wind, boat } = this.props;
+    this.donnes(wind, boat);
 
     return (
       <div className="compas">
@@ -92,7 +92,7 @@ class Compas extends Component {
           <span className="7">7</span>
           <span className="8">8</span>
         </h1>
-        <h1 className="grades_vent">
+        <h1 className="grades_wind">
           <span className="1" />
           <span className="2" />
           <span className="3" />

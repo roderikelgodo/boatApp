@@ -5,7 +5,7 @@ import Historique from "./components/Historique";
 
 class Body extends Component {
   render() {
-    const { vent, bateau } = this.props;
+    const { wind, boat } = this.props;
 
     return (
       <div className="container">
@@ -16,35 +16,35 @@ class Body extends Component {
           <div className="w-100" />
           <div className="col-xs-12 col-md-8 tablero">
             <h2>Vitesse</h2>
-            <p> {bateau.vitesseNoeud} N</p>
-            <Gauge bateau={bateau} />
+            <p> {boat.vitesseNoeud} N</p>
+            <Gauge boat={boat} />
           </div>
           <div className="w-100" />
           <div className="col-xs-6 col-md-4 tablero">
             <h2>Route (COG)</h2>
-            <p> {bateau.cap} °</p>
+            <p> {boat.cap} °</p>
           </div>
           <div className="col-xs-12 col-md-4 tablero">
             <h2>Compas</h2>
-            <p> {bateau.compas}N</p>
+            <p> {boat.compas}N</p>
           </div>
           <div className="col-xs-12 col-md-8 tablero">
             <h2>Position</h2>
-            <p> {bateau.position1}</p>
-            <p> {bateau.position2}</p>
+            <p> {boat.position1}</p>
+            <p> {boat.position2}</p>
           </div>
           <div className="w-100" />
           <div className="col-xs-12 col-md-8 tablero">
-            <h2>Direction (CAP) et Angle du vent</h2>
-            <Compas bateau={bateau} vent={vent} />
-            <p id="vitesseVent">
-              Vitesse actuelle du vent: {vent.vitesse} km/h
+            <h2>Direction (CAP) et Angle du wind</h2>
+            <Compas boat={boat} wind={wind} />
+            <p id="vitessewind">
+              Vitesse actuelle du wind: {wind.vitesse} km/h
             </p>
           </div>
           <div className="w-100" />
           <div className="col-xs-12 col-md-8 tablero">
             <h2>Historique</h2>
-            <Historique bateau={bateau} />
+            <Historique boat={boat} />
           </div>
           <div className="w-100" />
         </div>
