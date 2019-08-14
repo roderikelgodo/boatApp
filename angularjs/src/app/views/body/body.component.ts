@@ -30,12 +30,12 @@ export class BodyComponent implements OnInit {
 
 
   ngOnInit() {
-    // Call of function that fetch the needed boat and wind data
+    // Call of function that fetches the needed boat and wind data
     this.getData();
     // set the counter to call the getData() function every 10 seconds
-    // this.secondsCounter.subscribe(n => {
-    //   this.getData();
-    // });
+    this.secondsCounter.subscribe(n => {
+      this.getData();
+    });
   }
 
 
@@ -58,7 +58,6 @@ export class BodyComponent implements OnInit {
         if (resp.ok) {
           this.wind = resp.wind;
         }
-
       });
   }
 }

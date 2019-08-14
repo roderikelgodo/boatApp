@@ -15,7 +15,7 @@ export class WindService {
 
 
   /**
-   * Get a mock wind data from Firebase
+   * Get a mock wind data model instance from Firebase backend
    */
   getWindData() {
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BoatService, WindService } from "./service.index";
+import { BoatService, WindService } from './service.index';
 
 @NgModule({
   declarations: [],

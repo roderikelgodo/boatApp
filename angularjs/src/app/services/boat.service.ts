@@ -15,7 +15,7 @@ export class BoatService {
 
 
   /**
-   * Get a mock boat data from Firebase
+   * Get a mock boat data model instance from Firebase backend
    */
   getBoatData() {
 
