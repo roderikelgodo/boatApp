@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import $ from "jquery";
 
 class Compas extends Component {
+
+  /**
+   * Jquery function to draw the compass
+   * @param {*} wind
+   * @param {*} boat
+   */
+
   donnes(wind, boat) {
     this.control = false;
 
@@ -9,6 +16,7 @@ class Compas extends Component {
 
     let angle = parseInt(boat.compas);
 
+    // Array to form the compass bezel (coordenates)
     const anglesCoord = [
       "N  0°",
       "45°",
@@ -19,6 +27,7 @@ class Compas extends Component {
       "O 270°",
       "315°"
     ];
+    // Array of wind types
     const windTypes = [
       "Face",
       "Près",
@@ -29,6 +38,7 @@ class Compas extends Component {
       "Travers",
       "Pres"
     ];
+    // Array of custom (fixed) angles to make the graph work
     const angles = [0, 45, 90, 135, 180, 225, 270, 315];
 
     $(spans).each(function (i, span) {

@@ -3,6 +3,10 @@ import Gauge from "./components/Gauge";
 import Compas from "./components/Compas";
 import Historique from "./components/Historique";
 
+
+/**
+ * html 'body' content
+ */
 class Body extends Component {
   render() {
     const { wind, boat } = this.props;

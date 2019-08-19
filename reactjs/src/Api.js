@@ -18,7 +18,9 @@ class App extends Component {
   componentWillUnmount() {
     clearInterval(this.getData());
   }
-
+  /**
+   * Get a mock boat/wind data model instance from Firebase backend
+   */
   getData() {
     var url = "https://us-central1-bateau-b594b.cloudfunctions.net/wind";
     fetch(url)

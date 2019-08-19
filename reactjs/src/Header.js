@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Nav, Button } from "reactstrap";
 
+/**
+ * html 'header' content
+ */
 class Header extends Component {
   render() {
-    // const { characterData, removeCharacter } = this.props;
 
     return (
       <Nav className="navbar navbar-expand-lg navbar-dark bg-dark">
