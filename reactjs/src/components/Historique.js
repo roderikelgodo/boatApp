@@ -3,20 +3,12 @@ import Circle from "./Circle";
 
 class Historique extends Component {
 
-
-
   points = [];
   time = true;
 
   cirlces = [];
   coorsY = { 0: 350, 5: 300, 10: 250, 15: 200, 20: 150, 25: 100, 30: 50 };   // Noeuds
   coorsX = [450, 400, 350, 300, 250, 200, 150, 100];// Seconds
-
-  constructor(props) {
-
-    super(props);
-
-  }
 
   loadData(boat) {
     let noeud = parseInt(boat.vitesseNoeud);
@@ -45,10 +37,6 @@ class Historique extends Component {
     }
     return false;
   }
-
-  // componentWillMount() {
-  //   this.setViewBox();
-  // }
   componentDidMount() {
     window.addEventListener("resize", this.setViewBox());
   }
@@ -74,11 +62,11 @@ class Historique extends Component {
 
     this.loadData(boat)
 
-    // this.circles = this.points.map((point, i) =>
-    //   <Circle key={boat._id} cx={point[1]} cy={point[0]}
-    //     cxx={this.points[i + 1] ? this.points[i + 1][1] : point[1]}
-    //     cyy={this.points[i + 1] ? this.points[i + 1][0] : point[0]}></Circle>
-    // )
+    this.circles = this.points.map((point, i) =>
+      <Circle key={Math.random()} cx={point[1]} cy={point[0]}
+        cxx={this.points[i + 1] ? this.points[i + 1][1] : point[1]}
+        cyy={this.points[i + 1] ? this.points[i + 1][0] : point[0]}></Circle>
+    )
 
     return (
 

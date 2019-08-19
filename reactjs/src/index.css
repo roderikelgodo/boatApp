@@ -324,7 +324,7 @@ h1 > span {
     transform: rotate(-45deg);
 }
 
-.vent {
+.wind {
     color: red;
     position: absolute;
     margin-left: 12px;
@@ -334,7 +334,7 @@ h1 > span {
     background-color: currentColor;
 }
 
-.vent:before {
+.wind:before {
     content: '';
     position: absolute;
     left: -8px;
@@ -441,14 +441,14 @@ h1 > span {
         font-size: 0.9rem;
     }
 
-    .vent {
+    .wind {
         margin-left: 4px;
         margin-top: 47px;
         width: 3px;
         height: 23px;
     }
 
-    .vent:before {
+    .wind:before {
         left: -6px;
         top: 6px;
         width: 16px;
@@ -507,7 +507,7 @@ h1 > span {
         position: relative;
         height: 325px;
         width: 300px;
-        left: -3%;
+        left: -5%;
         margin-bottom: 10%;
     }
 }

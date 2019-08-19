@@ -7,8 +7,8 @@ class Circle extends Component {
     const { cx, cy, cxx, cyy } = this.props
 
     return [
-      <circle key={Date.now()} cx={cx} cy={cy} data-value="" r="4"></circle>,
-      <line x1={cx} y1={cy} x2={cxx} y2={cyy} stroke="black" />
+      <circle key={Date.now().toString()} cx={cx} cy={cy} data-value="" r="4"></circle>,
+      <line key={(Date.now() + cx).toString()} x1={cx} y1={cy} x2={cxx} y2={cyy} stroke="black" />
     ]
   }
 }
